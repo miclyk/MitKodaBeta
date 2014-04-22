@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/money.js"></script>
+    <style>
+        html .km-wp-light .km-content,
+        html .km-wp-light .km-button,
+        html .km-wp-light .km-navbar,
+        html .km-wp-light .km-detail,
+        html .km-wp-light *:not(.k-label) > input:not(.k-input),
+        html .km-wp-light .k-dropdown,
+        html .km-wp-light *:not(.k-label) > textarea,
+        html .km-wp-light *:not(.k-label) > select {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabstrip-home"
+        data-role="view"
+        data-title="Forside">
+
+        <div class="view-content">
+            <div class="logo"></div>
+            <h3 data-bind="">Velkommen til Mit Koda</h3>
+        </div>
+
+    </div>
+
+    <div id="tabstrip-works" data-role="view" data-bind="" data-title="Værker">
+    <p>
+        noget tekst
+        </p>
+    </div>
+    
+    <div id="tabstrip-concerts" data-role="view" data-bind="" data-title="Koncerter">
+    <p>
+        noget tekst
+        </p>
+    </div>
+    
+    <div id="tabstrip-profile" data-role="view" data-bind="" data-title="Profil">
+    <p>
+        noget tekst
+        </p>
+    </div>
+        
+    <div id="tabstrip-money" data-role="view" data-title="Penge"
+        >
+    <p class="title">
+        Dine posteringer
+        </p>
+        
+            <div class="separator">
+                <div class="dark"></div>
+                <div class="light"></div>
+            </div>
+
+            <ul class="forecast-list"
+                data-role="listview"
+                data-bind="source: moneyDataSource"
+                data-template="money-template">
+            </ul>
+    </div>
+
+    <!--Weather-->
+
+    <!--Weather forecast template-->
+    <script type="text/x-kendo-tmpl" id="money-template">
+        <div>
+            <div class="position-left">
+                <span class="weather-info date">${PostingDate}</span>
+            </div>
+            <div class="position-right">
+                <span class="weather-info temperature high">${DocumentNumber}<sup>&deg;</sup></span>
+                <span class="weather-info temperature low">${Desciption}<sup>&deg;</sup></span>
+            </div>
+            <div class="position-center">
+                <span class="weather-icon ${Amount}"></span>
+            </div>
+        </div>
+    </script>
+    
+    <!--Layout-->
+    <div data-role="layout" data-id="tabstrip-layout">
+
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </div>
+        
+        <div data-role="footer" data-bind="" id="footer">
+            <div data-role="tabstrip" data-bind="">
+                <a href="#tabstrip-home" data-icon="home">Forside</a>
+                <a href="#tabstrip-works" data-icon="bookmarks">Værker</a>
+                <a href="#tabstrip-concerts" data-icon="sounds">Koncerter</a>
+                <a href="#tabstrip-money" data-icon="toprated">Penge</a>
+                <a href="#tabstrip-profile" data-icon="contacts">Profil</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

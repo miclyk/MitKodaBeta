@@ -37,8 +37,8 @@ body, html {
 .logo {
     background-image: url(../styles/images/logo.png);
     background-repeat: no-repeat;
-    width: 319px;
-    height: 60px;
+    background-position: 5%;
+    height: 116px;
     margin: 40px auto;
 }
 

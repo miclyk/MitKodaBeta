@@ -1,5 +1,6 @@
 (function (global) {
     var mobileSkin = "",
+        isLoggedIn = false,
         app = global.app = global.app || {};
 
     document.addEventListener('deviceready', function () {
@@ -20,4 +21,5 @@
 
         app.application.skin(mobileSkin);
     };
+    
 })(window);
